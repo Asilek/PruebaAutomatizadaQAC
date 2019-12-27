@@ -41,14 +41,14 @@ public class TestRunner {
 		driver.findElement(By.cssSelector("#item-3 > .FirstLevelItems_menuText__UYB9A")).click();
 		driver.manage().wait(30);
 		driver.findElement(By.linkText("Consolas")).click();
-		driver.manage().wait(30);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		System.out.println("Selecciono Consolas");
 		{
 			WebElement element = driver.findElement(By.cssSelector(".fb-huincha-link-03"));
 			Actions builder = new Actions(driver);
 			builder.moveToElement(element).perform();
 		}
-		driver.manage().wait(30);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		{
 			WebElement element = driver.findElement(By.tagName("body"));
 			Actions builder = new Actions(driver);
@@ -65,17 +65,16 @@ public class TestRunner {
 			Actions builder = new Actions(driver);
 			builder.moveToElement(element, 0, 0).perform();
 		}
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		js.executeScript("window.scrollTo(0,600)");
 		driver.findElement(By.cssSelector("#testId-Accordion-Marca > .icon")).click();
 		driver.findElement(By.id("testId-Multiselect-Marca")).click();
-		driver.manage().wait(30);
-		// driver.findElement(By.id("testId-Multiselect-Marca")).sendKeys("nintendo");
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.findElement(
 				By.cssSelector(".jsx-4207689641:nth-child(3) .jsx-53718149:nth-child(12) .jsx-394545448:nth-child(2)"))
 				.click();
 		System.out.println("Filtro Nintendo");
-		driver.manage().wait(30);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.findElement(By.id("testId-Pod-action-8014967")).click();
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	    js.executeScript("window.scrollTo(0,188)");
@@ -92,7 +91,6 @@ public class TestRunner {
 	    }
 	    driver.findElement(By.cssSelector(".fb-quantity-input__plus")).click();
 	    driver.findElement(By.cssSelector(".fb-quantity-input__plus")).click();
-
 	}
 	
 	@AfterMethod()
