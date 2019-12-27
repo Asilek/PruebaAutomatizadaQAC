@@ -39,7 +39,7 @@ public class TestRunner {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(By.cssSelector(".HamburgerIcon_hamburgerText__3_7OL")).click();
 		driver.findElement(By.cssSelector("#item-3 > .FirstLevelItems_menuText__UYB9A")).click();
-		driver.manage().wait(30);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.findElement(By.linkText("Consolas")).click();
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		System.out.println("Selecciono Consolas");
