@@ -73,9 +73,9 @@ public class TestRunner {
 		driver.findElement(
 				By.cssSelector(".jsx-4207689641:nth-child(3) .jsx-53718149:nth-child(12) .jsx-394545448:nth-child(2)"))
 				.click();
-		System.out.println("Filtro Nintendo");
+		System.out.println("Filtro");
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		driver.findElement(By.id("testId-Pod-action-8014967")).click();
+		driver.navigate().to("https://www.falabella.com/falabella-cl/product/8112645/Ev-Consola-de-Juego-Super/8112645");
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	    js.executeScript("window.scrollTo(0,188)");
 	    js.executeScript("window.scrollTo(0,206)");
@@ -91,6 +91,8 @@ public class TestRunner {
 	    }
 	    driver.findElement(By.cssSelector(".fb-quantity-input__plus")).click();
 	    driver.findElement(By.cssSelector(".fb-quantity-input__plus")).click();
+            driver.findElement(By.cssSelector(".fb-quantity-input__plus")).click();
+	    System.out.println("Agrego");
 	}
 	
 	@AfterMethod()
